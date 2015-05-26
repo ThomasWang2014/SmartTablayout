@@ -328,7 +328,12 @@ public class SmartTabLayout extends HorizontalScrollView {
     return textView;
   }
 
-  private void populateTabStrip() {
+    @Override
+    protected void onScrollChanged(int l, int t, int oldl, int oldt) {
+        super.onScrollChanged(l, t, oldl, oldt);
+    }
+
+    private void populateTabStrip() {
     final PagerAdapter adapter = viewPager.getAdapter();
     final OnClickListener tabClickListener = new TabClickListener();
 
